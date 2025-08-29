@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Dashboard.css';
-import Navbar from './Navbar';
 import { useAuth } from '../contexts/authContext';
 import useSession from '../useSessions';
+import axios from 'axios';
 
 function Dashboard(){
     const [question, setQuestion] = useState("")
     const { currentUser } = useAuth();
     const navigate = useNavigate();
     const { startSession } = useSession();
-    const onSubmit = (e) => {
+
+    async function onSubmit(e) {
         if(!currentUser){
             navigate("/login");
         } else {
             e.preventDefault();
+            try {
+                const response = await axios.post("http://127.0.0.1:8000/add_question", {
+                    user: currentUser.uid,
+                    question: question,
+                });
+            } catch (error) {
+                console.log("couldn't add question`")
+                console.log(error)
+            }
             startSession(question);
             navigate("/interviewSpace", { state: { question } });
         }
@@ -22,7 +32,6 @@ function Dashboard(){
 
     return (
         <>
-        
         <div className="dashboard-container">
             <h1 className="dashboard-heading">Ready to ace your next coding interview ?</h1>
             <h2 className='dashboard-subheading'>Built to prepare you for your next coding interview.</h2>

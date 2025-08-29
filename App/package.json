@@ -12,6 +12,7 @@
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
     "@vapi-ai/web": "^2.3.8",
+    "axios": "^1.11.0",
     "firebase": "^12.1.0",
     "monaco-editor": "^0.52.2",
     "motion": "^12.23.12",

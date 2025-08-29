@@ -5,6 +5,7 @@ import InterviewSpace from "./components/InterviewSpace";
 import SignUp from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
+import History from "./components/History";
 
 function App() {
   return (
@@ -17,10 +18,11 @@ function App() {
           <Route path="/Login" element={< Login/>} />
           <Route path="/Dashboard" element={< Dashboard/>} />
           <Route path="/interviewSpace" element={< InterviewSpace/>} />
+          <Route path="/History" element={< History/>} />
         </Routes>
       </Router>
     </AuthProvider>
   );
 }
 
-export default App;
+export default App
