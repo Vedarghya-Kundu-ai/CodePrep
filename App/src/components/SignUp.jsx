@@ -36,7 +36,7 @@ function SignUp() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0d0f1a] px-4">
+    <div className="min-h-screen flex items-center justify-center px-4">
       {isSignedUp ? null : (
         <div className="w-full max-w-md bg-[#161b22] rounded-xl shadow-xl p-8">
           {/* Title */}

@@ -38,7 +38,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0d0f1a] px-4 py-4">
+    <div className="min-h-screen flex items-center justify-center px-4 py-4">
       {userLoggedIn ? <Navigate to="/Dashboard" /> : null}
 
       <div className="w-full max-w-md bg-[#161b22] rounded-xl shadow-xl p-8">

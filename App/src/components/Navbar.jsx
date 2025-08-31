@@ -22,13 +22,13 @@ function Navbar() {
       {/* Logo */}
       <div
         onClick={() => navigate("/")}
-        className="text-[#58a6ff] text-xl font-bold cursor-pointer"
+        className="text-[#58a6ff] text-2xl font-bold cursor-pointer"
       >
         CodePrep
       </div>
 
       {/* Nav Links */}
-      <ul className="flex items-center gap-6 text-[#c9d1d9] font-medium">
+      <ul className="flex items-center gap-6 text-[#c9d1d9] font-normal text-l">
         {currentUser && (
           <>
             <li>
@@ -54,7 +54,7 @@ function Navbar() {
           <li>
             <button
               onClick={handleSignOut}
-              className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-semibold px-4 py-2 rounded-md transition-transform transform hover:scale-105"
+              className="cursor-pointer bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-semibold px-4 py-2 rounded-md transition-transform transform hover:scale-105"
             >
               Sign Out
             </button>

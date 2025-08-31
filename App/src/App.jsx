@@ -12,14 +12,16 @@ function App() {
     <AuthProvider>
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" element={< Dashboard/>} />
-          <Route path="/SignUp" element={< SignUp/>} />
-          <Route path="/Login" element={< Login/>} />
-          <Route path="/Dashboard" element={< Dashboard/>} />
-          <Route path="/interviewSpace" element={< InterviewSpace/>} />
-          <Route path="/History" element={< History/>} />
-        </Routes>
+        <div className="min-h-screen bg-gradient-to-br from-gray-950 via-slate-900 to-black relative overflow-hidden">
+          <Routes>
+            <Route path="/" element={< Dashboard/>} />
+            <Route path="/SignUp" element={< SignUp/>} />
+            <Route path="/Login" element={< Login/>} />
+            <Route path="/Dashboard" element={< Dashboard/>} />
+            <Route path="/interviewSpace" element={< InterviewSpace/>} />
+            <Route path="/History" element={< History/>} />
+          </Routes>
+        </div>
       </Router>
     </AuthProvider>
   );

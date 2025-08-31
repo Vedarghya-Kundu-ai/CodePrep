@@ -26,7 +26,7 @@ function History() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0d0f1a] text-white p-6 mt-15">
+    <div className="min-h-screen text-white p-6 mt-15">
       <div className="max-w-3xl mx-auto">
         {/* Heading */}
         <h1 className="text-3xl font-bold mb-6 text-center text-blue-400">History</h1>
