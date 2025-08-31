@@ -74,7 +74,7 @@ function InterviewSpace() {
                     <div className="flex justify-center items-center">
                         <img src={waveimg} className="object-contain w-[120px]" alt="animated-gif" />
                     </div>
-                    <h2 className='text-l font-extrabold text-[#58a6ff] '>AI Interviewer</h2>
+                    <h2 className='text-l font-bold text-white text-xl'>AI Interviewer</h2>
                     {/* Show Bot transcription */}
                     <div className='display-transcript'>
                         <p className='transcription-sententence'>{assistantTranscription}</p>
@@ -95,9 +95,9 @@ function InterviewSpace() {
                 </div>
             </div>
             <div className="flex flex-col flex-2 justify-center items-center overflow-hidden bg-[#161b22] gap-4 rounded-lg shadow-md p-2 h-full">
-                <h2 className='text-3xl font-extrabold text-[#58a6ff] mt-2'>Code Editor</h2>
+                <h2 className='text-3xl font-bold text-[#58a6ff] mt-2'>Code Editor</h2>
                 <Editor
-                height="365px"
+                height="370px"
                 defaultLanguage="python"
                 defaultValue="#Start coding here...."
                 options={{ fontSize: 16 }}
