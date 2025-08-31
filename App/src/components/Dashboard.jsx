@@ -12,7 +12,7 @@ function Dashboard(){
 
     async function onSubmit(e) {
         if(!currentUser){
-            navigate("/login");
+            navigate("/Login");
         } else {
             e.preventDefault();
             try {
