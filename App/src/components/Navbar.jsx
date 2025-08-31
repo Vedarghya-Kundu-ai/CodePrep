@@ -9,11 +9,15 @@ function Navbar() {
   const { session } = useSession();
 
   const handleSignOut = async () => {
-    try {
-      await doSignOut();
-      navigate("/login");
-    } catch (error) {
-      console.error("Error signing out:", error);
+    if(confirm("Are you sure you want to sign out?")) {
+      try {
+        await doSignOut();
+        navigate("/login");
+      } catch (error) {
+        console.error("Error signing out:", error);
+      }
+    } else {
+      return ;
     }
   };
 
@@ -31,7 +35,7 @@ function Navbar() {
       </div>
 
       {/* Nav Links */}
-      <ul className="flex items-center gap-6 text-[#c9d1d9] font-medium text-xl">
+      <ul className="flex items-center gap-6 text-[#c9d1d9] font-normal text-xl">
         {currentUser && (
           <>
             <li>

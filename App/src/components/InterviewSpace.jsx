@@ -6,6 +6,8 @@ import Vapi from '@vapi-ai/web';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from "react-router-dom";
 import useSession from '../useSessions';
+import { useNavigate } from 'react-router-dom';
+import { warning } from 'motion';
 
 function InterviewSpace() {
     const [code, setCode] = useState("");
@@ -15,6 +17,7 @@ function InterviewSpace() {
     const location = useLocation();
     const { question } = location.state || {};
     const { session, endSession } = useSession();
+    const navigate = useNavigate();
     
     useEffect(() => {
         const vapi = new Vapi("9926bab3-6e6e-4c86-8bb4-24a868cd7fc5");
@@ -47,8 +50,14 @@ function InterviewSpace() {
 
     const endCall = () =>{
         //vapiref.current.say("Our time's up, goodbye!", true);
-        vapiref.current.say("Goodbye!")
-        endSession();
+        vapiref.current.say("Goodbye!");
+        if (confirm("Are you sure you want to end the call?")) {
+            navigate("/Dashboard");
+            endSession();
+        } else {
+            // User clicked Cancel
+            return ;
+        }
     };
 
     const handleSubmit = () =>{
