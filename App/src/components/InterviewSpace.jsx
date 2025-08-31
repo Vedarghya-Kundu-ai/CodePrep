@@ -68,45 +68,61 @@ function InterviewSpace() {
     };
 
     return(
-        <div className="container">
-            <div className="left-panel">
-                <div className="interview-space">
-                    <div className="animated-gif">
-                        <img src={waveimg} className="gif-img" alt="animated-gif" />
+        <div className="min-h-screen flex flex-row justify-center items-center gap-8 px-8 ">
+            <div className="flex flex-col flex-1 gap-4 h-full">
+                <div className="flex-1  flex flex-col items-center justify-center gap-5 bg-[#2d2f43] p-8 rounded-lg shadow-md">
+                    <div className="flex justify-center items-center">
+                        <img src={waveimg} className="object-contain w-[120px]" alt="animated-gif" />
                     </div>
-                    <h2 style={{marginTop: "-8px"}}>AI Interviewer</h2>
+                    <h2 className='text-l font-extrabold text-[#58a6ff] '>AI Interviewer</h2>
                     {/* Show Bot transcription */}
                     <div className='display-transcript'>
                         <p className='transcription-sententence'>{assistantTranscription}</p>
                     </div>
                 </div>
 
-                <div className="user-response">
+                <div className="flex-1  flex flex-col items-center justify-center gap-5 bg-[#2d2f43] p-8 rounded-lg shadow-md">
                     <img
                         src={micIcon}
                         alt="Mic"
-                        className="mic-button"
+                        className="object-contain w-[120px] cursor-pointer transition-transform transform active:scale-110"
                         onClick={handleMicClick}
                     />
-                    <button className='stop-btn' onClick={endCall}>End Call</button>
+                    <button className='cursor-pointer px-2 py-1 rounded-xl font-medium bg-[#e63946] transition-transform transform active:scale-110' onClick={endCall}>End Call</button>
                     <div className='display-transcript'>
                         <p className='transcription-sententence'>{userTranscription}</p>
                     </div>
                 </div>
             </div>
-            <div className="code-editor">
-                <h2>Code Editor</h2>
+            <div className="flex flex-col flex-2 justify-center items-center overflow-hidden bg-[#161b22] gap-4 rounded-lg shadow-md p-2 h-full">
+                <h2 className='text-3xl font-extrabold text-[#58a6ff] mt-2'>Code Editor</h2>
                 <Editor
-                height="80%"
+                height="365px"
                 defaultLanguage="python"
                 defaultValue="#Start coding here...."
                 options={{ fontSize: 16 }}
                 theme="vs-dark"
                 onChange={(value) => setCode(value ?? "")}
                 />
-                <div className='submit-code-btn'>
-                    <button onClick={handleSubmit}>Submit</button>
-                </div>              
+                <button
+                onClick={handleSubmit}
+                className="
+                    relative inline-flex items-center justify-center
+                    cursor-pointer
+                    px-5 py-2 min-w-[132px]
+                    rounded-lg
+                    font-semibold text-sm text-[#eaeaea]
+                    transition-all duration-200 ease-in-out
+                    active:scale-95
+                    bg-[#0e639c]
+                    border-2 border-transparent
+                    bg-clip-padding
+                    before:absolute before:inset-0 before:rounded-lg before:p-[2px] before:bg-gradient-to-r before:from-[#3794ff] before:to-[#1177bb] before:-z-10
+                "
+                >
+                Submit
+                </button>
+            
             </div>
         </div>
     )

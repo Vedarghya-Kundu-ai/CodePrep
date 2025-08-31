@@ -7,28 +7,28 @@ body {
     color: #f1f1f1;
 }
 
-.container {
+/* .container {
     display: flex;
     height: 100vh;
     padding: 100px;
     gap: 20px;
     box-sizing: border-box;
 
-}
+} */
 
 /* Left column: Interview + Transcript stacked vertically */
-.left-panel {
+/* .left-panel {
 
     display: flex;
     flex-direction: column;
     flex: 1;
     gap: 20px;
-}
+} */
 
 /* Right column: Code editor takes most space */
 /* \CSS */
 /* Code editor: proper border and subtle depth */
-.code-editor {
+/* .code-editor {
   flex: 2;
   width: 50vw;
 
@@ -42,34 +42,33 @@ body {
   padding: 12px;
   border-radius: 10px;
 
-  /* Proper border */
+
   border: 1px solid #2b3242;
-  /* Soft shadow for separation */
+ 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
 }
-
+ */
 /* Title remains as you had it */
-.code-editor h2 {
+/* .code-editor h2 {
   display: flex;
   align-items: center;
   margin-top: -10px;
   margin-bottom: 10px;
   color: #58a6ff;
-}
+} */
 
 /* Footer: center the Submit button and space it cleanly */
-.submit-code-btn {
+/* .submit-code-btn {
   display: flex;
-  justify-content: center;  /* centers the button */
+  justify-content: center; 
   align-items: center;
   padding: 10px 0;
   margin-top: 8px;
 
-  /* optional thin divider line above buttons */
+
   border-top: 1px solid #2b3242;
 }
 
-/* Make the existing button look good (no JSX changes needed) */
 .submit-code-btn button {
   appearance: none;
   border: 1px solid #3b4352;
@@ -80,10 +79,10 @@ body {
   font-size: 13px;
   font-weight: 600;
   color: #eaeaea;
-  background-color: #0e639c;  /* VS Code-like blue */
-  cursor: pointer;
+  background-color: #0e639c;  
+  cursor: pointer; */
 
-  transition:
+/*   transition:
     background-color 120ms ease,
     border-color 120ms ease,
     transform 80ms ease,
@@ -106,9 +105,9 @@ body {
   outline: 2px solid #3794ff;
   outline-offset: 2px;
 }
-
+ */
 /* Shared card styles */
-.interview-space,
+/* .interview-space,
 .user-response {
     background: #2d2f43;
     padding: 20px;
@@ -116,10 +115,10 @@ body {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     border: 1px solid #3b3f58;
     height: 100%;
-}
+} */
 
 /* Dimensions */
-.interview-space {
+/* .interview-space {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,7 +134,7 @@ body {
     align-items: center;
  
     width: 30vw;
-}
+} */
 /* Display transcript */
 .display-transcript{
     margin-top: -30px;
@@ -175,16 +174,16 @@ p {
 }
 
 /* Mic button base */
-.mic-button {
+/* .mic-button {
   margin-top: 0px;
   height: 115px;
-  width: 115px;               /* ensure square hit area */
+  width: 115px;            
   border: none;
-  border-radius: 50%;         /* circular button feel */
+  border-radius: 50%;       
   cursor: pointer;
   display: inline-block;
   object-fit: contain;
-  background: transparent;    /* if it's an <img>, background stays transparent */
+  background: transparent;   
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -192,50 +191,50 @@ p {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
   filter: brightness(0.95) contrast(1.05);
   will-change: transform, box-shadow, filter;
-}
+} */
 
 /* Hover “pop” effect */
-.mic-button:hover {
+/* .mic-button:hover {
   transform: translateY(-2px) scale(1.08);
   box-shadow:
     0 10px 24px rgba(0, 0, 0, 0.35),
-    0 0 12px rgba(88, 166, 255, 0.35); /* subtle blue glow to match editor theme */
+    0 0 12px rgba(88, 166, 255, 0.35); 
   filter: brightness(1) contrast(1.1);
-}
+} */
 
 /* Active/pressed feedback */
-.mic-button:active {
+/* .mic-button:active {
   transform: translateY(0) scale(1.02);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
   filter: brightness(0.97);
-}
+} */
 
 /* Optional: focus ring for keyboard accessibility */
-.mic-button:focus-visible {
+/* .mic-button:focus-visible {
   outline: none;
   box-shadow:
     0 0 0 3px rgba(88, 166, 255, 0.5),
     0 8px 20px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* If the mic is an <img>, remove global button hover color bleed */
-button:hover .mic-button,
+/* button:hover .mic-button,
 .mic-button:hover {
   background: transparent;
-}
+} */
 
-.stop-btn {
+/* .stop-btn {
   font-size: 16px;
   transition: font-size 0.1s ease-in, background-color 0.3s ease-in;
 }
 
 .stop-btn:hover {
-  font-size: 18px;        /* grows smoothly */
-  background-color: #e63946; /* example: change bg on hover */
-}
+  font-size: 18px;      
+  background-color: #e63946; 
+} */
 
 /* GIF style */
-.animated-gif {
+/* .animated-gif {
     display: flex;
     justify-content: center;
 }
@@ -244,3 +243,4 @@ button:hover .mic-button,
     object-fit: contain;
     margin-top: 10px;
 }
+ */
