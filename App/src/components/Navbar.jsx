@@ -70,7 +70,7 @@ function Navbar() {
           <>
             <li>
               <Link
-                to="/login"
+                to="/Login"
                 className="hover:text-[#58a6ff] transition-colors"
               >
                 Login
