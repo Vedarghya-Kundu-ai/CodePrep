@@ -11,10 +11,10 @@ function Dashboard(){
     const { startSession } = useSession();
 
     async function onSubmit(e) {
+        e.preventDefault();
         if(!currentUser){
             navigate("/Login");
         } else {
-            e.preventDefault();
             try {
                 const response = await axios.post("http://127.0.0.1:8000/add_question", {
                     user: currentUser.uid,
