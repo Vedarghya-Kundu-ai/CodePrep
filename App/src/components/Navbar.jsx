@@ -22,13 +22,16 @@ function Navbar() {
       {/* Logo */}
       <div
         onClick={() => navigate("/")}
-        className="text-[#58a6ff] text-2xl font-bold cursor-pointer"
+        className="flex items-center gap-2 cursor-pointer select-none"
       >
-        CodePrep
+        <span className="text-[#58a6ff] text-2xl font-bold">{`</>`}</span>
+        <span className="text-3xl font-bold bg-gradient-to-r from-[#58a6ff] to-[#22d3ee] bg-clip-text text-transparent">
+          CodePrep
+        </span>
       </div>
 
       {/* Nav Links */}
-      <ul className="flex items-center gap-6 text-[#c9d1d9] font-normal text-l">
+      <ul className="flex items-center gap-6 text-[#c9d1d9] font-medium text-xl">
         {currentUser && (
           <>
             <li>
