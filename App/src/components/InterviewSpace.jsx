@@ -5,22 +5,22 @@ import waveimg from '../assets/message.png';
 import Vapi from '@vapi-ai/web';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from "react-router-dom";
-import useSession from '../useSessions';
 import { useNavigate } from 'react-router-dom';
-import { warning } from 'motion';
+
 
 function InterviewSpace() {
     const [code, setCode] = useState("");
     const [assistantTranscription, setAssistantTranscription] = useState("")
     const [userTranscription, setUserTranscription] = useState("")
+    const [interviewActive, setInterviewActive] = useState(false);
     const vapiref = useRef(null);
     const location = useLocation();
     const { question } = location.state || {};
-    const { session, endSession } = useSession();
+    
     const navigate = useNavigate();
     
     useEffect(() => {
-        const vapi = new Vapi("9926bab3-6e6e-4c86-8bb4-24a868cd7fc5");
+        const vapi = new Vapi("4daa5c7d-b903-488c-bbdd-8e3b21e46831");
         vapiref.current = vapi;
         vapiref.current.on('message', (message) => {
             if(message.role == "assistant"){
@@ -45,7 +45,19 @@ function InterviewSpace() {
     };
     
     const handleMicClick = () => {
-        vapiref.current.start("67b22507-7da2-4f28-b34d-cd4d2e746454", assistantoverrides);
+        if(interviewActive == true) {
+            return ;
+        } else {
+            if(!question) {
+                alert("Please enter a question in your Dashboard to start the interview");
+                setInterviewActive(false);
+                navigate("/Dashboard");
+                return ;
+            } else {
+                setInterviewActive(true);
+                vapiref.current.start("fac7a826-d3a8-4fdd-928c-e5289074ae3d", assistantoverrides);
+            }
+        }
     };
 
     const endCall = () =>{
@@ -53,7 +65,7 @@ function InterviewSpace() {
         vapiref.current.say("Goodbye!");
         if (confirm("Are you sure you want to end the call?")) {
             navigate("/Dashboard");
-            endSession();
+            vapiref.current.stop();
         } else {
             // User clicked Cancel
             return ;
@@ -77,13 +89,13 @@ function InterviewSpace() {
     };
 
     return(
-        <div className="min-h-screen flex flex-row justify-center items-center gap-8 px-8 ">
+        <div className="min-h-screen flex flex-row justify-center items-center gap-8 px-8 mt-8">
             <div className="flex flex-col flex-1 gap-4 h-full">
                 <div className="flex-1  flex flex-col items-center justify-center gap-5 bg-[#2d2f43] p-8 rounded-lg shadow-md">
                     <div className="flex justify-center items-center">
                         <img src={waveimg} className="object-contain w-[120px]" alt="animated-gif" />
                     </div>
-                    <h2 className='text-l font-bold text-white text-xl'>AI Interviewer</h2>
+                    <h2 className='text-l font-bold text-white text-xl mb-3'>AI Interviewer</h2>
                     {/* Show Bot transcription */}
                     <div className='display-transcript'>
                         <p className='transcription-sententence'>{assistantTranscription}</p>
@@ -97,7 +109,7 @@ function InterviewSpace() {
                         className="object-contain w-[120px] cursor-pointer transition-transform transform active:scale-110"
                         onClick={handleMicClick}
                     />
-                    <button className='cursor-pointer px-2 py-1 rounded-xl font-medium bg-[#e63946] transition-transform transform active:scale-110' onClick={endCall}>End Call</button>
+                    <button className='cursor-pointer px-2 py-1 rounded-xl font-medium bg-[#e63946] transition-transform transform active:scale-110 mb-3' onClick={endCall}>End Call</button>
                     <div className='display-transcript'>
                         <p className='transcription-sententence'>{userTranscription}</p>
                     </div>
@@ -106,7 +118,7 @@ function InterviewSpace() {
             <div className="flex flex-col flex-2 justify-center items-center overflow-hidden bg-[#161b22] gap-4 rounded-lg shadow-md p-2 h-full">
                 <h2 className='text-3xl font-bold text-[#58a6ff] mt-2'>Code Editor</h2>
                 <Editor
-                height="370px"
+                height="392px"
                 defaultLanguage="python"
                 defaultValue="#Start coding here...."
                 options={{ fontSize: 16 }}

@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/authContext";
 import { doSignOut } from "../firebase/auth";
 import useSession from "../useSessions";
+import InterviewSpace from "./InterviewSpace";
 
 function Navbar() {
   const { currentUser } = useAuth();
@@ -54,6 +55,14 @@ function Navbar() {
                 History
               </Link>
             </li>
+            <li>
+              <Link
+                to="/interviewSpace"
+                className="hover:text-[#58a6ff] transition-colors"
+              >
+                Interview
+              </Link>
+            </li>
           </>
         )}
 
@@ -84,6 +93,7 @@ function Navbar() {
                 Sign Up
               </Link>
             </li>
+            
           </>
         )}
       </ul>

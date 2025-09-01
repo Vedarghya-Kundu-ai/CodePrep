@@ -8,7 +8,6 @@ function Dashboard(){
     const [question, setQuestion] = useState("")
     const { currentUser } = useAuth();
     const navigate = useNavigate();
-    const { startSession } = useSession();
 
     async function onSubmit(e) {
         e.preventDefault();
@@ -24,7 +23,6 @@ function Dashboard(){
                 console.log("couldn't add question`")
                 console.log(error)
             }
-            startSession(question);
             navigate("/interviewSpace", { state: { question } });
         }
     }
