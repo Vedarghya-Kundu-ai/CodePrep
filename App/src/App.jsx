@@ -12,7 +12,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Navbar />
-        <div className="min-h-screen bg-gradient-to-br from-gray-950 via-slate-900 to-black relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-black via-blue-950 to-black relative overflow-hidden">
           <Routes>
             <Route path="/" element={< Dashboard/>} />
             <Route path="/SignUp" element={< SignUp/>} />
