@@ -157,6 +157,14 @@ body {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+.ai-speaking,
+.user-speaking {
+  border: 2px solid #58a6ff; /* bright blue border */
+  border-radius: 16px;       /* smooth rounded corners */
+  box-shadow: 0 0 25px rgba(88, 166, 255, 0.7); /* glowing blue highlight */
+  transition: all 0.3s ease-in-out;
+}
+
 
 /* user speaks here */
 
