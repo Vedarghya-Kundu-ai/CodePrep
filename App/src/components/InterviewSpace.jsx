@@ -43,7 +43,6 @@ function InterviewSpace() {
         variableValues: {
             question: question,
         },
-        
     };
     
     const handleMicClick = () => {
@@ -73,6 +72,7 @@ function InterviewSpace() {
             return ;
         }
     };
+
     const handleSubmit = () =>{
         const message = code.toString();
         vapiref.current.send({
