@@ -59,7 +59,7 @@ function Dashboard(){
                 <form onSubmit={onSubmit}>
                     <input 
                         type="text" 
-                        placeholder="Enter your coding interview question/topic here" 
+                        placeholder="Enter your coding interview question/topic here." 
                         required
                         onChange={(e) => setQuestion(e.target.value)}
                         className="w-96 md:w-[550px] min-h-[40px] px-4 py-5 rounded-xl border-2 border-gray-700 bg-white text-gray-900 text-lg font-medium outline-none transition-all duration-300 ease-in-out focus:border-blue-400 focus:shadow-[0_0_12px_rgba(88,166,255,0.7)] focus:scale-105 block box-border"
