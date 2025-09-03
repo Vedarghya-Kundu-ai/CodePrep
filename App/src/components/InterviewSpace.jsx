@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
-
 function InterviewSpace() {
     const [code, setCode] = useState("");
     const [Transcription, setTranscription] = useState("")
@@ -98,7 +97,6 @@ function InterviewSpace() {
                             <img src={waveimg} className="object-contain w-[120px]" alt="animated-gif" />
                         </div>
                         <h2 className='text-l font-bold text-white text-xl mb-3'>AI Interviewer</h2>
-                        {/* Show Bot transcription */}
                     </div>
 
                     <div className={`flex-1  flex flex-col items-center justify-center gap-5 bg-[#2d2f43] p-8 rounded-lg shadow-md ${userSpeaking ? "user-speaking" : "" } `}>

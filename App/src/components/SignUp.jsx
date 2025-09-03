@@ -83,7 +83,7 @@ function SignUp() {
             {/* Submit button */}
             <button
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition-transform transform hover:-translate-y-0.5"
+              className=" cursor-pointer w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition-transform transform hover:-translate-y-0.5"
             >
               Sign Up
             </button>
@@ -93,7 +93,7 @@ function SignUp() {
           <div className="mt-4">
             <button
               onClick={handleGoogleSignIn}
-              className="w-full bg-[#24292f] hover:bg-[#30363d] text-[#e6edf3] border border-[#30363d] font-medium py-2 rounded-lg transition-transform transform hover:-translate-y-0.5"
+              className="cursor-pointer w-full bg-[#24292f] hover:bg-[#30363d] text-[#e6edf3] border border-[#30363d] font-medium py-2 rounded-lg transition-transform transform hover:-translate-y-0.5"
             >
               Sign Up with Google
             </button>
